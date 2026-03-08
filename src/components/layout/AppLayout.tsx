@@ -7,7 +7,7 @@ interface AppLayoutProps {
 
 const AppLayout = ({ children }: AppLayoutProps) => {
   return (
-    <div className="flex max-lg:flex-col min-h-screen pt-20 pl-20 pb-12 pr-12 max-lg:pt-16 max-lg:px-12 bg-background">
+    <div className="flex max-lg:flex-col min-h-screen pt-20 pl-20 pb-12 pr-12 max-lg:pt-16 max-md:px-6 max-lg:px-12 bg-background">
       <aside className="lg:flex-1 flex flex-col justify-between">
         <header className="flex flex-col gap-3 lg:gap-4 lg:mr-10 max-lg:mb-10">
           <p className="text-xl lg:text-2xl font-light max-lg:text-center">
@@ -29,7 +29,7 @@ const AppLayout = ({ children }: AppLayoutProps) => {
       </aside>
 
       <main className="flex-1 bg-background max-lg:flex max-lg:flex-col">
-        <div className="bg-white p-10 flex-1 rounded-2xl shadow-card h-full">
+        <div className="bg-white py-10 px-14 flex-1 rounded-2xl shadow-card h-full">
           {children}
         </div>
       </main>
