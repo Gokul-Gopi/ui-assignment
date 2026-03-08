@@ -7,16 +7,29 @@ interface AppLayoutProps {
 
 const AppLayout = ({ children }: AppLayoutProps) => {
   return (
-    <div className="flex min-h-dvh pt-20 pl-20 pb-12 pr-12 bg-background">
-      <aside className="flex-1 flex flex-col gap-4">
-        <p className="text-2xl font-light">Let's get started</p>
-        <h1 className="text-5xl font-bold">Create your account</h1>
-        <p>Follow the steps to create your account</p>
-        <Image src={artboard} alt="artboard" className="mt-auto mb-5 w-full" />
+    <div className="flex max-lg:flex-col min-h-screen pt-20 pl-20 pb-12 pr-12 max-lg:pt-16 max-lg:px-12 bg-background">
+      <aside className="lg:flex-1 flex flex-col justify-between">
+        <header className="flex flex-col gap-3 lg:gap-4 lg:mr-10 max-lg:mb-10">
+          <p className="text-xl lg:text-2xl font-light max-lg:text-center">
+            Let's get started
+          </p>
+          <h1 className="text-4xl lg:text-5xl font-bold max-lg:text-center">
+            Create your account
+          </h1>
+          <p className="max-lg:text-sm max-lg:text-center">
+            Follow the steps to create your account
+          </p>
+        </header>
+
+        <Image
+          src={artboard}
+          alt="artboard"
+          className="mt-auto mb-5 w-full max-lg:hidden"
+        />
       </aside>
 
-      <main className="flex-1 bg-background">
-        <div className="bg-white p-10 rounded-2xl shadow-card h-full">
+      <main className="flex-1 bg-background max-lg:flex max-lg:flex-col">
+        <div className="bg-white p-10 flex-1 rounded-2xl shadow-card h-full">
           {children}
         </div>
       </main>
