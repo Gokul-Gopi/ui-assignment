@@ -23,7 +23,7 @@ const SelectAccountType = () => {
   const [selectedOption, setSelectedOption] = useState(1);
 
   return (
-    <div className="flex flex-col flex-1">
+    <div className="flex flex-1 flex-col">
       <FormHeader
         title={
           <p className="font-normal">
@@ -41,7 +41,7 @@ const SelectAccountType = () => {
               role="button"
               onClick={() => setSelectedOption(el.id)}
               className={cn(
-                "relative flex shadow-card items-center gap-5 border border-border rounded-2xl py-6 px-8 cursor-pointer",
+                "shadow-card border-border relative flex cursor-pointer items-center gap-5 rounded-2xl border px-8 py-6",
                 {
                   "border-primary text-primary": selectedOption === el.id,
                 },
@@ -55,7 +55,7 @@ const SelectAccountType = () => {
                 <Image
                   src={check}
                   alt="check"
-                  className="size-7 absolute right-5 top-1/2 -translate-y-1/2"
+                  className="absolute top-1/2 right-5 size-7 -translate-y-1/2"
                 />
               )}
             </div>

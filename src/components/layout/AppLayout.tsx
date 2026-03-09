@@ -7,16 +7,16 @@ interface AppLayoutProps {
 
 const AppLayout = ({ children }: AppLayoutProps) => {
   return (
-    <div className="flex max-lg:flex-col min-h-screen pt-20 pl-20 pb-12 pr-12 max-lg:pt-16 max-md:px-6 max-lg:px-12 bg-background">
-      <aside className="lg:flex-1 flex flex-col justify-between">
-        <header className="flex flex-col gap-3 lg:gap-4 lg:mr-10 max-lg:mb-10">
-          <p className="text-xl lg:text-2xl font-light max-lg:text-center">
+    <div className="bg-background flex min-h-screen pt-20 pr-12 pb-12 pl-20 max-lg:flex-col max-lg:px-12 max-lg:pt-16 max-md:px-6">
+      <aside className="flex flex-col justify-between lg:flex-1">
+        <header className="flex flex-col gap-3 max-lg:mb-10 lg:mr-10 lg:gap-4">
+          <p className="text-xl font-light max-lg:text-center lg:text-2xl">
             Let&apos;s get started
           </p>
-          <h1 className="text-4xl lg:text-5xl font-bold max-lg:text-center">
+          <h1 className="text-4xl font-bold max-lg:text-center lg:text-5xl">
             Create your account
           </h1>
-          <p className="max-lg:text-sm max-lg:text-center">
+          <p className="max-lg:text-center max-lg:text-sm">
             Follow the steps to create your account
           </p>
         </header>
@@ -28,8 +28,8 @@ const AppLayout = ({ children }: AppLayoutProps) => {
         />
       </aside>
 
-      <main className="flex-1 bg-background max-lg:flex max-lg:flex-col">
-        <div className="bg-white pt-10 pb-14 px-6 md:px-14 flex-1 flex flex-col rounded-2xl shadow-card h-full">
+      <main className="bg-background flex-1 max-lg:flex max-lg:flex-col">
+        <div className="shadow-card flex h-full flex-1 flex-col rounded-2xl bg-white px-6 pt-10 pb-14 md:px-14">
           {children}
         </div>
       </main>
