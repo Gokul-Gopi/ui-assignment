@@ -1,16 +1,16 @@
 import SelectAccountType from "@/components/home/SelectAccountType";
-import React from "react";
+import Head from "next/head";
 
 const Page = () => {
   return (
     <>
-      <head>
+      <Head>
         <title>Create your account</title>
         <meta
           name="description"
           content="Follow the steps to create your account"
         />
-      </head>
+      </Head>
 
       <SelectAccountType />
     </>

@@ -11,7 +11,7 @@ const AppLayout = ({ children }: AppLayoutProps) => {
       <aside className="lg:flex-1 flex flex-col justify-between">
         <header className="flex flex-col gap-3 lg:gap-4 lg:mr-10 max-lg:mb-10">
           <p className="text-xl lg:text-2xl font-light max-lg:text-center">
-            Let's get started
+            Let&apos;s get started
           </p>
           <h1 className="text-4xl lg:text-5xl font-bold max-lg:text-center">
             Create your account
