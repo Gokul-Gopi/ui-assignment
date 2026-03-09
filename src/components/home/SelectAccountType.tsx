@@ -20,10 +20,10 @@ const options = [
 ];
 
 const SelectAccountType = () => {
-  const [selectedOption, setSelectedOption] = useState<number | null>(1);
+  const [selectedOption, setSelectedOption] = useState(1);
 
   return (
-    <div>
+    <div className="flex flex-col flex-1">
       <FormHeader
         title={
           <p className="font-normal">
@@ -41,7 +41,7 @@ const SelectAccountType = () => {
               role="button"
               onClick={() => setSelectedOption(el.id)}
               className={cn(
-                "relative flex shadow-card items-center gap-5 border border-[#D9E0E6] rounded-2xl py-6 px-8 cursor-pointer",
+                "relative flex shadow-card items-center gap-5 border border-border rounded-2xl py-6 px-8 cursor-pointer",
                 {
                   "border-primary text-primary": selectedOption === el.id,
                 },

@@ -29,7 +29,7 @@ const AppLayout = ({ children }: AppLayoutProps) => {
       </aside>
 
       <main className="flex-1 bg-background max-lg:flex max-lg:flex-col">
-        <div className="bg-white py-10 px-14 flex-1 rounded-2xl shadow-card h-full">
+        <div className="bg-white pt-10 pb-14 px-6 md:px-14 flex-1 flex flex-col rounded-2xl shadow-card h-full">
           {children}
         </div>
       </main>
