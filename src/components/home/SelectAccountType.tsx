@@ -26,7 +26,7 @@ const SelectAccountType = () => {
     <div className="flex flex-1 flex-col">
       <FormHeader
         title={
-          <p className="font-normal">
+          <p className="font-normal!">
             To join us tell us{" "}
             <strong className="font-medium">what type of account</strong> you
             are opening

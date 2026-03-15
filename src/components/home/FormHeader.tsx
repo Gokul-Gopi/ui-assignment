@@ -4,7 +4,7 @@ interface IFormHeaderProps {
 
 const FormHeader = ({ title }: IFormHeaderProps) => {
   return (
-    <h2 className="text-xl lg:text-2xl font-normal max-lg:text-balance max-lg:text-center max-lg:mx-auto mb-12 max-w-md">
+    <h2 className="mb-12 max-w-md text-xl font-medium max-lg:mx-auto max-lg:text-center max-lg:text-balance lg:text-2xl">
       {title}
     </h2>
   );
