@@ -1,5 +1,6 @@
 import artboard from "../../../public/art-board.svg";
 import Image from "next/image";
+import { Progress } from "@/components/ui/Progress";
 
 interface AppLayoutProps {
   children: React.ReactNode;
@@ -29,6 +30,10 @@ const AppLayout = ({ children }: AppLayoutProps) => {
       </aside>
 
       <main className="bg-background flex-1 max-lg:flex max-lg:flex-col">
+        <Progress
+          value={50}
+          className="mx-auto mb-1 max-w-[80%] rounded-full"
+        />
         <div className="shadow-card flex h-full flex-1 flex-col rounded-2xl bg-white px-6 pt-10 pb-14 md:px-14">
           {children}
         </div>

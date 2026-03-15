@@ -74,14 +74,14 @@ const InnerInput = ({
   );
 
   return (
-    <div className={cn("flex items-center gap-2", className)}>
+    <div className={cn("flex items-center gap-2 max-md:flex-col", className)}>
       <Combobox
         items={COUNTRY_CODES}
         value={countryCode}
         onValueChange={handleCountryChange}
         disabled={disabled}
       >
-        <ComboboxInput className="w-24" />
+        <ComboboxInput className="w-24 max-md:w-full" />
         <ComboboxContent sideOffset={10}>
           <ComboboxEmpty>No items found.</ComboboxEmpty>
           <ComboboxList>
@@ -110,7 +110,7 @@ const InnerInput = ({
         onChange={handleNumberChange}
         onBlur={onBlur}
         disabled={disabled}
-        className="flex-1"
+        className="md:flex-1"
         aria-label="Phone number"
       />
     </div>
