@@ -6,7 +6,9 @@ const FormButtons = () => {
       <Button variant="outline" className="w-full sm:w-62.5">
         Back
       </Button>
-      <Button className="w-full sm:w-62.5">Continue</Button>
+      <Button type="submit" className="w-full sm:w-62.5">
+        Continue
+      </Button>
     </div>
   );
 };

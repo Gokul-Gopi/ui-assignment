@@ -8,30 +8,12 @@ import {
   ComboboxList,
 } from "@/components/ui/Combobox";
 import { Input } from "@/components/ui/Input";
-import { cn } from "@/utils/helpers";
+import { cn, COUNTRY_CODES } from "@/utils/helpers";
 import { useCallback } from "react";
 import Image from "next/image";
 import usaFlag from "../../../public/usa-flag.svg";
 import ukFlag from "../../../public/uk-flag.svg";
 import indiaFlag from "../../../public/india-flag.svg";
-
-const COUNTRY_CODES = [
-  {
-    value: "+1",
-    label: "+1",
-    flag: usaFlag.src,
-  },
-  {
-    value: "+44",
-    label: "+44",
-    flag: ukFlag.src,
-  },
-  {
-    value: "+91",
-    label: "+91",
-    flag: indiaFlag.src,
-  },
-];
 
 interface IPhoneValue {
   countryCode: string;
@@ -144,7 +126,16 @@ const PhoneNumberInput = ({
   className,
 }: IPhoneNumberInputProps) => {
   const form = useFormContext();
-  const error = form.formState.errors[name];
+  const error = form.formState.errors[name] as
+    | {
+        countryCode?: { message?: string };
+        number?: { message?: string };
+        message?: string;
+      }
+    | undefined;
+
+  const errorMessage =
+    error?.countryCode?.message || error?.number?.message || error?.message;
 
   return (
     <div className={cn("flex flex-col gap-1", className)}>
@@ -167,9 +158,9 @@ const PhoneNumberInput = ({
           />
         )}
       />
-      {error && (
+      {errorMessage && (
         <p className="text-destructive text-sm" role="alert">
-          {String(error.message)}
+          {errorMessage}
         </p>
       )}
     </div>
