@@ -1,3 +1,4 @@
+import ConfirmOTP from "@/components/home/ConfirmOTP";
 import OTPVerificaton from "@/components/home/OTPVerificaton";
 import SelectAccountType from "@/components/home/SelectAccountType";
 import Head from "next/head";
@@ -14,7 +15,8 @@ const Page = () => {
       </Head>
 
       {/* <SelectAccountType /> */}
-      <OTPVerificaton />
+      {/* <OTPVerificaton /> */}
+      <ConfirmOTP />
     </>
   );
 };

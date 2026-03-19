@@ -25,3 +25,9 @@ export const phoneNumberSchema = z.object({
 });
 
 export type TPhoneNumberSchema = z.infer<typeof phoneNumberSchema>;
+
+export const otpSchema = z.object({
+  otp: z.string().length(4, { message: "OTP must be 4 digits" }),
+});
+
+export type TOTPSchema = z.infer<typeof otpSchema>;

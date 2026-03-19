@@ -11,9 +11,6 @@ import { Input } from "@/components/ui/Input";
 import { cn, COUNTRY_CODES } from "@/utils/helpers";
 import { useCallback } from "react";
 import Image from "next/image";
-import usaFlag from "../../../public/usa-flag.svg";
-import ukFlag from "../../../public/uk-flag.svg";
-import indiaFlag from "../../../public/india-flag.svg";
 
 interface IPhoneValue {
   countryCode: string;
@@ -158,6 +155,7 @@ const PhoneNumberInput = ({
           />
         )}
       />
+
       {errorMessage && (
         <p className="text-destructive text-sm" role="alert">
           {errorMessage}
