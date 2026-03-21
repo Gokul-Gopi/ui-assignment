@@ -27,12 +27,18 @@ const CreatePassword = () => {
         <FormHeader title="Create Password for your account" />
 
         <div className="flex flex-col gap-4">
-          <PasswordInput name="password" label="Enter new password" required />
+          <PasswordInput
+            name="password"
+            label="Enter new password"
+            required
+            description="Must be atleast 6 characters"
+          />
 
           <PasswordInput
             name="confirmPassword"
             label="Confirm Password"
             required
+            description="Both passwords must match"
           />
         </div>
 
