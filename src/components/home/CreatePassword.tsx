@@ -7,8 +7,12 @@ import {
 } from "@/utils/validationSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import PasswordInput from "@/components/form/PasswordInput";
+import AccountSuccessDialog from "./AccountSuccessDialog";
+import { useState } from "react";
 
 const CreatePassword = () => {
+  const [successDialogOpen, setSuccessDialogOpen] = useState(false);
+
   const form = useForm<TCreatePasswordSchema>({
     resolver: zodResolver(createPasswordSchema),
     defaultValues: {
@@ -19,6 +23,8 @@ const CreatePassword = () => {
 
   const onSubmit = form.handleSubmit((data) => {
     console.log({ data });
+    form.reset();
+    setSuccessDialogOpen(true);
   });
 
   return (
@@ -44,6 +50,11 @@ const CreatePassword = () => {
 
         <FormButtons />
       </form>
+
+      <AccountSuccessDialog
+        open={successDialogOpen}
+        onOpenChange={setSuccessDialogOpen}
+      />
     </FormProvider>
   );
 };
