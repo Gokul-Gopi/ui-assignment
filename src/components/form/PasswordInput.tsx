@@ -44,7 +44,10 @@ const PasswordInput = ({
           id={name}
           aria-invalid={fieldState.invalid}
           {...props}
-          className={cn("border-0 text-base! focus-visible:ring-0", className)}
+          className={cn(
+            "border-0 text-base! placeholder:text-[#D9E0E6] focus-visible:ring-0",
+            className,
+          )}
         />
         <InputGroupAddon align="inline-end" className="bg-white pr-8">
           {showPassword ? (

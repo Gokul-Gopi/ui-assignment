@@ -36,14 +36,16 @@ const CreatePassword = () => {
           <PasswordInput
             name="password"
             label="Enter new password"
+            placeholder="Enter new password"
             required
             description="Must be atleast 6 characters"
           />
 
           <PasswordInput
             name="confirmPassword"
-            label="Confirm Password"
+            label="Confirm password"
             required
+            placeholder="Confirm password"
             description="Both passwords must match"
           />
         </div>

@@ -29,7 +29,7 @@ const TextInput = ({
         id={name}
         aria-invalid={fieldState.invalid}
         {...props}
-        className={cn("text-base!", className)}
+        className={cn("text-base! placeholder:text-[#D9E0E6]", className)}
       />
       {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
     </Field>

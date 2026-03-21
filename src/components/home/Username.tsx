@@ -30,9 +30,19 @@ const Username = () => {
         <FormHeader title="What is your name?" />
 
         <div className="flex flex-col gap-4 xl:pr-20">
-          <TextInput name="firstName" label="First Name" required />
+          <TextInput
+            name="firstName"
+            label="First Name"
+            placeholder="First Name"
+            required
+          />
 
-          <TextInput name="lastName" label="Last Name" required />
+          <TextInput
+            name="lastName"
+            label="Last Name"
+            placeholder="Last Name"
+            required
+          />
         </div>
 
         {/* -2 because we are going back to the OTP verification step */}
