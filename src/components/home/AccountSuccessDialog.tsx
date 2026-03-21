@@ -6,9 +6,10 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { Check, ShieldCheck } from "lucide-react";
+import { ShieldCheck } from "lucide-react";
 import checkIcon from "../../../public/check-icon2.svg";
 import Image from "next/image";
+import useOnBoardingStore from "@/store";
 
 interface IAccountSummary {
   accountType: string;
@@ -16,13 +17,6 @@ interface IAccountSummary {
   name: string;
   mobile: string;
 }
-
-const defaultSummary: IAccountSummary = {
-  accountType: "Personal",
-  email: "jo••••@example.com",
-  name: "John Doe",
-  mobile: "9711677290",
-};
 
 interface ISummaryRowProps {
   label: string;
@@ -49,7 +43,10 @@ const AccountSuccessDialog = ({
   onOpenChange,
   summary,
 }: AccountSuccessDialogProps) => {
-  const merged = { ...defaultSummary, ...summary };
+  const accountType = useOnBoardingStore((state) => state.accountType);
+  const email = "demomail@google.com";
+  const name = useOnBoardingStore((state) => state.username);
+  const mobile = useOnBoardingStore((state) => state.phoneNumber);
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
@@ -71,10 +68,16 @@ const AccountSuccessDialog = ({
         </div>
 
         <div className="space-y-3 rounded-xl bg-neutral-200/30 px-4 py-4 text-left">
-          <SummaryRow label="Account Type" value={merged.accountType} />
-          <SummaryRow label="Email" value={merged.email} />
-          <SummaryRow label="Name" value={merged.name} />
-          <SummaryRow label="Mobile Number" value={merged.mobile} />
+          <SummaryRow label="Account Type" value={accountType.name} />
+          <SummaryRow label="Email" value={email} />
+          <SummaryRow
+            label="Name"
+            value={`${name.firstName} ${name.lastName}`}
+          />
+          <SummaryRow
+            label="Mobile Number"
+            value={`${mobile.countryCode} ${mobile.number}`}
+          />
         </div>
 
         <p className="text-muted-foreground flex items-center justify-center gap-1 text-sm">

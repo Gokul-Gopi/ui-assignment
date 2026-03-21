@@ -8,10 +8,14 @@ import { Button } from "@/components/ui/Button";
 import { useEffect, useRef, useState } from "react";
 import { formatTime } from "@/utils/helpers";
 import { toast } from "sonner";
+import useOnBoardingStore from "@/store";
 
 const RESEND_OTP_TIME = 60;
 
 const ConfirmOTP = () => {
+  const step = useOnBoardingStore((state) => state.step);
+  const setStep = useOnBoardingStore((state) => state.setStep);
+
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [resendOtpTime, setResendOtpTime] = useState(RESEND_OTP_TIME);
 
@@ -24,8 +28,8 @@ const ConfirmOTP = () => {
 
   const formattedTime = formatTime(resendOtpTime);
 
-  const onSubmit = form.handleSubmit((data) => {
-    console.log({ data });
+  const onSubmit = form.handleSubmit(() => {
+    setStep(step + 1);
   });
 
   const onResendOtp = () => {
@@ -74,7 +78,7 @@ const ConfirmOTP = () => {
           </div>
         </div>
 
-        <FormButtons />
+        <FormButtons onBack={() => setStep(step - 1)} />
       </form>
     </FormProvider>
   );
