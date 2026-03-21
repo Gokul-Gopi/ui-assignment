@@ -61,12 +61,12 @@ const ConfirmOTP = () => {
           />
 
           <div className="flex items-center gap-1 lg:ml-auto">
-            <p className="text-sm">Didn't receive the OTP?</p>
+            <p className="text-sm">Didn&apos;t receive the OTP?</p>
             <Button
               type="button"
               variant="link"
               className="px-0"
-              // disabled={resendOtpTime > 0}
+              disabled={resendOtpTime > 0}
               onClick={onResendOtp}
             >
               Resend OTP {resendOtpTime > 0 ? `in ${formattedTime}s` : null}
