@@ -28,7 +28,7 @@ const OTPVerificaton = () => {
       <form onSubmit={onSubmit} className="flex flex-1 flex-col">
         <FormHeader title="OTP Verification" />
 
-        <PhoneInput name="phone" required />
+        <PhoneInput name="phone" required className="xl:pr-20" />
 
         <FormButtons />
       </form>

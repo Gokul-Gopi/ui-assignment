@@ -23,7 +23,7 @@ const SelectAccountType = () => {
   const [selectedOption, setSelectedOption] = useState(1);
 
   return (
-    <div className="flex flex-1 flex-col">
+    <div className="flex flex-1 flex-col xl:pr-20">
       <FormHeader
         title={
           <p className="font-normal!">

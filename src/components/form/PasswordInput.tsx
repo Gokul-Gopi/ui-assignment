@@ -66,7 +66,7 @@ const PasswordInput = ({
         <FieldError errors={[fieldState.error]} />
       ) : (
         description && (
-          <FieldDescription className="text-label text-base">
+          <FieldDescription className="text-label text-base font-normal">
             {description}
           </FieldDescription>
         )

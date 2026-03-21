@@ -26,7 +26,7 @@ const CreatePassword = () => {
       <form onSubmit={onSubmit} className="flex flex-1 flex-col">
         <FormHeader title="Create Password for your account" />
 
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 xl:pr-20">
           <PasswordInput
             name="password"
             label="Enter new password"

@@ -23,7 +23,7 @@ const Username = () => {
       <form onSubmit={onSubmit} className="flex flex-1 flex-col">
         <FormHeader title="What is your name?" />
 
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 xl:pr-20">
           <TextInput name="firstName" label="First Name" required />
 
           <TextInput name="lastName" label="Last Name" required />
