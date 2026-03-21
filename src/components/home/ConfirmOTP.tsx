@@ -7,6 +7,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "@/components/ui/Button";
 import { useEffect, useRef, useState } from "react";
 import { formatTime } from "@/utils/helpers";
+import { toast } from "sonner";
 
 const RESEND_OTP_TIME = 60;
 
@@ -28,6 +29,7 @@ const ConfirmOTP = () => {
   });
 
   const onResendOtp = () => {
+    toast.success("OTP has been sent to your mobile number");
     setResendOtpTime(RESEND_OTP_TIME);
   };
 
@@ -61,9 +63,10 @@ const ConfirmOTP = () => {
           <div className="flex items-center gap-1 lg:ml-auto">
             <p className="text-sm">Didn't receive the OTP?</p>
             <Button
+              type="button"
               variant="link"
               className="px-0"
-              disabled={resendOtpTime > 0}
+              // disabled={resendOtpTime > 0}
               onClick={onResendOtp}
             >
               Resend OTP {resendOtpTime > 0 ? `in ${formattedTime}s` : null}
