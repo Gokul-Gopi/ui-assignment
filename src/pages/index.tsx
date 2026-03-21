@@ -1,4 +1,5 @@
 import ConfirmOTP from "@/components/home/ConfirmOTP";
+import CreatePassword from "@/components/home/CreatePassword";
 import OTPVerificaton from "@/components/home/OTPVerificaton";
 import SelectAccountType from "@/components/home/SelectAccountType";
 import Username from "@/components/home/Username";
@@ -18,7 +19,8 @@ const Page = () => {
       {/* <SelectAccountType /> */}
       {/* <OTPVerificaton /> */}
       {/* <ConfirmOTP /> */}
-      <Username />
+      {/* <Username /> */}
+      <CreatePassword />
     </>
   );
 };
