@@ -41,7 +41,6 @@ type AccountSuccessDialogProps = {
 const AccountSuccessDialog = ({
   open,
   onOpenChange,
-  summary,
 }: AccountSuccessDialogProps) => {
   const accountType = useOnBoardingStore((state) => state.accountType);
   const email = "demomail@google.com";

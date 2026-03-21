@@ -11,7 +11,6 @@ interface TextInputProps extends React.ComponentProps<typeof Input> {
 const TextInput = ({
   name,
   label,
-  placeholder,
   required,
   className,
   ...props

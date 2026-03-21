@@ -21,7 +21,6 @@ const PasswordInput = ({
   name,
   description,
   label,
-  placeholder,
   required,
   className,
   ...props
