@@ -28,7 +28,7 @@ const SelectAccountType = () => {
   );
 
   return (
-    <div className="flex flex-1 flex-col xl:pr-20">
+    <div className="flex flex-1 flex-col">
       <FormHeader
         title={
           <p className="font-normal!">
@@ -39,7 +39,7 @@ const SelectAccountType = () => {
         }
       />
 
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-4 xl:pr-20">
         {options.map((el) => (
           <div key={el.id}>
             <div
