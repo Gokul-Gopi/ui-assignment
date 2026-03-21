@@ -1,12 +1,17 @@
 import artboard from "../../../public/art-board.svg";
 import Image from "next/image";
 import { Progress } from "@/components/ui/Progress";
+import useOnBoardingStore from "@/store";
 
 interface AppLayoutProps {
   children: React.ReactNode;
 }
 
 const AppLayout = ({ children }: AppLayoutProps) => {
+  const step = useOnBoardingStore((state) => state.step);
+
+  const progress = (step / 5) * 100;
+
   return (
     <div className="bg-background flex min-h-screen pt-20 pr-12 pb-12 pl-20 max-lg:flex-col max-lg:px-12 max-lg:pt-16 max-md:px-6">
       <aside className="flex flex-col justify-between lg:flex-1">
@@ -31,7 +36,7 @@ const AppLayout = ({ children }: AppLayoutProps) => {
 
       <main className="bg-background flex-1 max-lg:flex max-lg:flex-col">
         <Progress
-          value={50}
+          value={progress}
           className="mx-auto mb-1 max-w-[80%] rounded-full"
         />
         <div className="shadow-card flex h-full flex-1 flex-col rounded-2xl bg-white px-6 pt-10 pb-14 md:px-14">
